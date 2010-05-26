@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "NaturalLanguageTranslator",
+	"category" : "Gettext",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"LocaleDirsForDomain",
+		"SystemDefaultLocaleDirs",
+		"UserDefaultLocaleDirs"
+	],
+	"instvars" : [
+		"moFiles"
+	],
+	"name" : "GetTextTranslator",
+	"type" : "normal"
+}

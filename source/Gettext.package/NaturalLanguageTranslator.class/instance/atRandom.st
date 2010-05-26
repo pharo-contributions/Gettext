@@ -1,0 +1,4 @@
+accessing
+atRandom
+
+	self subclassResponsibility.

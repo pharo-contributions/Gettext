@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "tk 1/4/2008 16:08",
+	"super" : "Object",
+	"category" : "Gettext",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"ClassCategories",
+		"Classes",
+		"DefaultDomain",
+		"DomainInfos",
+		"LoneClasses"
+	],
+	"instvars" : [ ],
+	"name" : "TextDomainManager",
+	"type" : "normal"
+}

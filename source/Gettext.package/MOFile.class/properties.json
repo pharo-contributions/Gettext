@@ -1,0 +1,29 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "Gettext",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Cr",
+		"Lf"
+	],
+	"instvars" : [
+		"localeID",
+		"fileName",
+		"isLittleEndian",
+		"magic",
+		"revision",
+		"nStrings",
+		"originalTableOffset",
+		"translatedTableOffset",
+		"hashTableSize",
+		"hashTableOffset",
+		"hashTable",
+		"originalStrings",
+		"translatedStrings",
+		"translations"
+	],
+	"name" : "MOFile",
+	"type" : "normal"
+}

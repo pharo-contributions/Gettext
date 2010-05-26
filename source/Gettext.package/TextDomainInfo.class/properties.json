@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "Gettext",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"categoryPrefixes",
+		"categories"
+	],
+	"name" : "TextDomainInfo",
+	"type" : "normal"
+}
