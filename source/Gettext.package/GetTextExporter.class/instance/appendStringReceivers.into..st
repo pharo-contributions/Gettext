@@ -7,7 +7,7 @@ appendStringReceivers: aSymbol into: domains
 		methodReference := assoc key.
 		keywords := assoc value.
 		domainName := self getTextDomainForClassCategory:
-			(Smalltalk at: methodReference classSymbol) category.
+			(Smalltalk at: methodReference theNonMetaClassName) category.
 		literals := domains at: domainName ifAbsentPut: [Dictionary new].
 		keywords do: [ :literal |
 			references := literals at: literal ifAbsentPut: [OrderedCollection new].

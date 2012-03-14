@@ -7,7 +7,7 @@ findWordsWith: aSymbol in: aMethodReference
 	methodSymbol: #supplementaryPartsDescriptions.
 	self new findWordsWIth: #translatedNoop in: message"
 	| messages keywords aParseNode |
-	aParseNode := aMethodReference decompile.
+	aParseNode := aMethodReference method decompile.
 	"Find from string literal"
 	messages := Set new.
 	self
