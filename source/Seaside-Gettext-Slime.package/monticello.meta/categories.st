@@ -1,3 +1,2 @@
-SystemOrganization addCategory: #'Seaside-Gettext-Slime'!
 SystemOrganization addCategory: #'Seaside-Gettext-Slime-Tests'!
-SystemOrganization addCategory: #'Seaside-Gettext-Slime-Tests-Data'!
+SystemOrganization addCategory: #'Seaside-Gettext-Slime'!
