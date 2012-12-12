@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WAGettextSlimeTransformationRule",
+	"category" : "Seaside-Gettext-Slime",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WAReplaceLiteralStringRenderMethodsWithTranslate",
+	"type" : "normal"
+}

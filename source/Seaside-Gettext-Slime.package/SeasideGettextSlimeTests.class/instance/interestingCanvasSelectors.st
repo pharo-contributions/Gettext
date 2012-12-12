@@ -1,0 +1,3 @@
+convenience
+interestingCanvasSelectors
+	^WAAddSeasideTranslated selectorsOfInterest 
