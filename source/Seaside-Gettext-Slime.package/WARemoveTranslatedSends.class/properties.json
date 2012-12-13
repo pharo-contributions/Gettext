@@ -4,11 +4,8 @@
 	"category" : "Seaside-Gettext-Slime",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"InterestingSubclasses",
-		"MethodsToIgnore"
-	],
+	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "WAAddSeasideTranslatedToStrings",
+	"name" : "WARemoveTranslatedSends",
 	"type" : "normal"
 }

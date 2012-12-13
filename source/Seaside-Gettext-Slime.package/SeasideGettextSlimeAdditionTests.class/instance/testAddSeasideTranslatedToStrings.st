@@ -1,7 +1,7 @@
 as yet unclassified
 testAddSeasideTranslatedToStrings
 	| class aMethodSelector result randomSelectors |
-	class := self defineClass: #WAGettextMockObject superclass: #WAComponent.
+	class := self mockComponent.
 	result := OrderedCollection new.
 	result add: 'you ^''you'' seasideTranslated'.
 	result add: 'youYou ^''you'' seasideTranslated , ''you'' seasideTranslated'.

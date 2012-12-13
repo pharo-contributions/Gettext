@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WAAddSeasideTranslatedToStrings",
+	"category" : "Seaside-Gettext-Slime",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WAAddSeasideLazyTranslatedToStrings",
+	"type" : "normal"
+}

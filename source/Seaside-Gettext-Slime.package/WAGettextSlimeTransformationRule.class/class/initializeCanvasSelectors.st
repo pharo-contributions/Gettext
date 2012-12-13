@@ -6,7 +6,7 @@ initializeCanvasSelectors
 	CanvasSelectorsOfInterest add: #title:.
 	CanvasSelectorsOfInterest remove: #heading:level:.
 	CanvasSelectorsToIgnore := Set new.
-	#(#render: #class: #id: #style: #attributeAt:put: #level: #heading:level: #translate: #on:)
+	#(#render: #class: #id: #style: #attributeAt:put: #level: #heading:level: #translate: #on: #for:)
 		do: [ :each | CanvasSelectorsToIgnore add: each ].
 	jsSelectors := ((JSObject withAllSubclasses gather: [ :each | each selectors ]) select: [ :each | each isKeyword ])
 		asSet.

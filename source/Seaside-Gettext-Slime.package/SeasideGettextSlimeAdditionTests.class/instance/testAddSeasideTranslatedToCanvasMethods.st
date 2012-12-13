@@ -1,7 +1,7 @@
 as yet unclassified
 testAddSeasideTranslatedToCanvasMethods
 	| class aMethodSelector result randomSelectors |
-	class := self defineClass: #WAGettextMockObject superclass: #WAComponent.
+	class := self mockComponent.
 	randomSelectors := OrderedCollection new.
 	3 timesRepeat: [ randomSelectors add: self interestingCanvasSelectors atRandom ].
 	randomSelectors

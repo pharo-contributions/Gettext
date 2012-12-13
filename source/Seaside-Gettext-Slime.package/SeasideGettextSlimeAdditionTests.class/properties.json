@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SeasideGettextSlimeTests",
+	"category" : "Seaside-Gettext-Slime-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SeasideGettextSlimeAdditionTests",
+	"type" : "normal"
+}
