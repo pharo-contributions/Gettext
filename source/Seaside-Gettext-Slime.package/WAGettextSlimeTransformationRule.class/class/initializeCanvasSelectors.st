@@ -4,6 +4,7 @@ initializeCanvasSelectors
 	CanvasSelectorsOfInterest := (WAHtmlCanvas selectors select: [ :each | each isKeyword ]) asSet.
 	CanvasSelectorsOfInterest add: #with:.
 	CanvasSelectorsOfInterest add: #title:.
+	CanvasSelectorsOfInterest add: #text:.
 	CanvasSelectorsOfInterest remove: #heading:level:.
 	CanvasSelectorsToIgnore := Set new.
 	#(#render: #class: #id: #style: #attributeAt:put: #level: #heading:level: #translate: #on: #for:)
@@ -16,4 +17,5 @@ initializeCanvasSelectors
 	jsSelectors remove: #text:.
 	jsSelectors remove: #title:.
 	jsSelectors remove: #with:.
+	jsSelectors remove: #header:.
 	jsSelectors do: [ :each | CanvasSelectorsToIgnore add: each ]

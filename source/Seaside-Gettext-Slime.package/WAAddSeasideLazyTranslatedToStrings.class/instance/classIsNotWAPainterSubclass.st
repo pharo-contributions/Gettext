@@ -1,4 +1,4 @@
 as yet unclassified
 classIsNotWAPainterSubclass
 	^ class name = #WAGettextMockObject
-		and: [ class name ~= #WAGettextMockComponent or: [ (InterestingSubclasses includes: class) not ] ]
+		or: [ class name ~= #WAGettextMockComponent and: [ (InterestingSubclasses includes: class) not ] ]
