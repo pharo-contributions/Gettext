@@ -1,5 +1,11 @@
-as yet unclassified
+testing
 parentsDoNotSendMethodToIgnore: node
-	
-	^ node parents
-		allSatisfy: [ :each | each isMessage not or: [ each isMessage and: [ (self methodsToIgnore includes: each selector) not ] ] ]
+	"	self haltIf: [ node value = 'You' ]."
+
+	node parents reverse
+		do: [ :each | 
+			each isMessage
+				ifTrue: [ 
+					(self methodsToIgnore includes: each selector)
+						ifTrue: [ ^ false ] ] ].
+	^ true

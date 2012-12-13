@@ -4,4 +4,4 @@ initialize
 	self rewriteRule
 		replace: '`@object '
 		with: '`@object seasideTranslated'
-		when: [ :node | node value isString and: [ self parentsDoIncludeSelectorOfInterestFor: node ] ]
+		when: [ :node | (self nodeIsInterestingString: node) and: [ self parentsDoIncludeSelectorOfInterestFor: node ] ]

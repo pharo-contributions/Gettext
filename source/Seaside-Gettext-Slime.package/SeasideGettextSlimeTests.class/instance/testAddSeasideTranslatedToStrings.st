@@ -8,11 +8,12 @@ testAddSeasideTranslatedToStrings
 	result add: 'youOneYou ^''you'' seasideTranslated , 1 greaseString , ''you'' seasideTranslated'.
 	result
 		add:
-			'youFromStream ^ String streamContents: [:s | s nextPutAll: ''you'' seasideTranslated ; nextPut: $a; nextPutAll: ''you'' seasideTranslated]'.
+			'youFromStream ^ String streamContents: [:s | s nextPutAll: ''You'' seasideTranslated ; nextPut: $a; nextPutAll: ''fromStream'' seasideTranslated]'.
 	self compile: 'you ^ ''you''' in: class.
 	self compile: 'youYou ^ ''you'' , ''you''' in: class.
 	self compile: 'youOneYou ^ ''you'' , 1 greaseString , ''you''' in: class.
 	self
-		compile: 'youFromStream ^ String streamContents: [:s | s nextPutAll: ''you''; nextPut: $a; nextPutAll: ''you'']'
+		compile:
+			'youFromStream ^ String streamContents: [:s | s nextPutAll: ''You''; nextPut: $a; nextPutAll: ''fromStream'']'
 		in: class.
 	self runTransformation: WAAddSeasideTranslatedToStrings changes: result

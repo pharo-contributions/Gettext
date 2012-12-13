@@ -1,6 +1,12 @@
 as yet unclassified
 parentsDoIncludeSelectorOfInterestFor: node
-	^ node parents
-		anySatisfy: [ :each | 
+	node parents reverse
+		do: [ :each | 
 			each isMessage
-				and: [ (self selectorsToIgnore includes: each selector) not and: [ self selectorsOfInterest includes: each selector ] ] ]
+				ifTrue: [ 
+					(self selectorsToIgnore includes: each selector)
+						ifTrue: [ ^ false ]
+						ifFalse: [ 
+							(self selectorsOfInterest includes: each selector)
+								ifTrue: [ ^ true ] ] ] ].
+	^ false

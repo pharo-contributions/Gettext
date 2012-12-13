@@ -1,3 +1,3 @@
 as yet unclassified
 isVisible
-	^ false
+	^ self name ~= #WAGettextSlimeTransformationRule
