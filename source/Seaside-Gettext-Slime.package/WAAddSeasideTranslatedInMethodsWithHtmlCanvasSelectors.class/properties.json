@@ -4,11 +4,8 @@
 	"category" : "Seaside-Gettext-Slime",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"CanvasSelectorsOfInterest",
-		"CanvasSelectorsToIgnore"
-	],
+	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "WAAddSeasideTranslated",
+	"name" : "WAAddSeasideTranslatedInMethodsWithHtmlCanvasSelectors",
 	"type" : "normal"
 }

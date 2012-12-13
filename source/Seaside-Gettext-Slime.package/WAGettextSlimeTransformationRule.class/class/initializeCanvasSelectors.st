@@ -5,4 +5,5 @@ initializeCanvasSelectors
 	CanvasSelectorsOfInterest add: #title:.
 	CanvasSelectorsOfInterest remove: #heading:level:.
 	CanvasSelectorsToIgnore := Set new.
-	#(#render: #title: #class: #id: #style: #attributeAt:put: #level:) do: [ :each | CanvasSelectorsToIgnore add: each ]
+	#(#render: #title: #class: #id: #style: #attributeAt:put: #level: #heading:level: #translate:)
+		do: [ :each | CanvasSelectorsToIgnore add: each ]

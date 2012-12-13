@@ -1,14 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "GRSlimeTransformationRule",
+	"super" : "WAGettextSlimeTransformationRule",
 	"category" : "Seaside-Gettext-Slime",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"CanvasSelectorsOfInterest",
-		"CanvasSelectorsToIgnore"
+		"MethodsToIgnore"
 	],
 	"instvars" : [ ],
-	"name" : "WAGettextSlimeTransformationRule",
+	"name" : "WAAddSeasideTranslatedToStrings",
 	"type" : "normal"
 }
