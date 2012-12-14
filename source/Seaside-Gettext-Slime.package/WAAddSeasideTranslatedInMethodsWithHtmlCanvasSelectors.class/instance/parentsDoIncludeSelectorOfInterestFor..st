@@ -8,5 +8,5 @@ parentsDoIncludeSelectorOfInterestFor: node
 						ifTrue: [ ^ false ]
 						ifFalse: [ 
 							(self selectorsOfInterest includes: each selector)
-								ifTrue: [ ^ true ] ] ] ].
+								ifTrue: [ ^ self doesNotContainNameFragments: each ] ] ] ].
 	^ false

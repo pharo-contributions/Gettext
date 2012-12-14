@@ -5,5 +5,13 @@ parentsDoNotSendMethodToIgnore: node
 			each isMessage
 				ifTrue: [ 
 					(self methodsToIgnore includes: each selector)
-						ifTrue: [ ^ false ] ] ].
+						ifTrue: [ ^ false ]
+						ifFalse: [ 
+							(self doesNotContainNameFragments: each)
+								ifFalse: [ ^ false ] ] ]
+				ifFalse: [ 
+					each isMethod
+						ifTrue: [ 
+							(self doesNotContainNameFragments: each)
+								ifFalse: [ ^ false ] ] ] ].
 	^ true

@@ -8,7 +8,9 @@
 		"CanvasSelectorsOfInterest",
 		"CanvasSelectorsToIgnore"
 	],
-	"instvars" : [ ],
+	"instvars" : [
+		"checkForMethodNameFragments"
+	],
 	"name" : "WAGettextSlimeTransformationRule",
 	"type" : "normal"
 }

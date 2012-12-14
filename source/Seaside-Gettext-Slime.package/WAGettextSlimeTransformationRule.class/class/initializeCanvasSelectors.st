@@ -2,20 +2,14 @@ as yet unclassified
 initializeCanvasSelectors
 	| jsSelectors |
 	CanvasSelectorsOfInterest := (WAHtmlCanvas selectors select: [ :each | each isKeyword ]) asSet.
-	CanvasSelectorsOfInterest add: #with:.
-	CanvasSelectorsOfInterest add: #title:.
-	CanvasSelectorsOfInterest add: #text:.
 	CanvasSelectorsOfInterest remove: #heading:level:.
 	CanvasSelectorsToIgnore := Set new.
-	#(#render: #class: #id: #style: #attributeAt:put: #level: #heading:level: #translate: #on: #for:)
+	#(#render: #class: #id: #style: #attributeAt:put: #level: #heading:level: #translate: #on: #for: #handleRequest: #lint: #rationale: #at: #at:put: #resourceUrl: #url:)
 		do: [ :each | CanvasSelectorsToIgnore add: each ].
 	jsSelectors := ((JSObject withAllSubclasses gather: [ :each | each selectors ]) select: [ :each | each isKeyword ])
 		asSet.
-	jsSelectors remove: #label:.
-	jsSelectors remove: #confirm:.
-	jsSelectors remove: #alert:.
-	jsSelectors remove: #text:.
-	jsSelectors remove: #title:.
-	jsSelectors remove: #with:.
-	jsSelectors remove: #header:.
-	jsSelectors do: [ :each | CanvasSelectorsToIgnore add: each ]
+	jsSelectors do: [ :each | CanvasSelectorsToIgnore add: each ].
+	#(#with: #title: #text: #alert: #confirm: #label: #header:)
+		do: [ :each | 
+			CanvasSelectorsOfInterest add: each.
+			CanvasSelectorsToIgnore remove: each ifAbsent: [ nil ] ]
