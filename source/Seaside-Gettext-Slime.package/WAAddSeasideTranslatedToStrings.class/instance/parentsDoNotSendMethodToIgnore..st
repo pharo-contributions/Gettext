@@ -1,7 +1,10 @@
 testing
 parentsDoNotSendMethodToIgnore: node
+
 	node parents reverse
 		do: [ :each | 
+			(each isPragma or:[each isLiteralArray ])
+				ifTrue: [ ^ false ].
 			each isMessage
 				ifTrue: [ 
 					(self methodsToIgnore includes: each selector)
