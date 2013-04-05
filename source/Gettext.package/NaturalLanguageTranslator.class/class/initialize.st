@@ -1,3 +1,3 @@
 class initialization
 initialize
-	Smalltalk addToStartUpList: NaturalLanguageTranslator after: FileDirectory.
+	Smalltalk addToStartUpList: NaturalLanguageTranslator after: FileLocator
