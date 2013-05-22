@@ -1,4 +1,6 @@
 accessing
 reloadMOFiles
-	moFiles := Dictionary new.
-	self loadMOFiles.
+	
+	self deprecated: 'Use the more intuitive refresh method'.
+	
+	self refresh
