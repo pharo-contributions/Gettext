@@ -1,5 +1,5 @@
 class initialization
 privateStartUp
-	self resetCaches.
-	GetTextTranslator privateStartUp.
+	self reset.
+	GetTextTranslator reset.
 	self localeChanged.

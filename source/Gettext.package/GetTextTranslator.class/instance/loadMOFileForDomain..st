@@ -1,6 +1,7 @@
 private
 loadMOFileForDomain: aDomainName
 	| moName |
+
 	moName := self class findMOForLocaleID: self localeID 
 								domain: aDomainName.
 	moName notNil
