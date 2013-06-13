@@ -10,7 +10,7 @@ dirNameDomain: domain translator: translator
 	fileName := translator
 				ifNil: [domain , '.pot']
 				ifNotNil: [translator localeID posixName , '.po'].
-	dirName := 'po', FileDirectory slash, domain.
-	pathName := dirName , FileDirectory slash , fileName.
-	(FileDirectory default directoryNamed: dirName) assureExistence.
+	dirName := 'po', FileSystem disk delimiter asString , domain.
+	pathName := dirName ,  FileSystem disk delimiter asString , fileName.
+	(dirName asFileReference ensureDirectory).
 	^ pathName

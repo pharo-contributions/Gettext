@@ -9,4 +9,4 @@ availableForLocaleID: localeID
 				ifTrue: [self translators
 						at: localeID parent
 						ifAbsent: [self default]]
-				ifFalse: [self default]]
+				ifFalse: [self default]] 

@@ -12,7 +12,7 @@ dirNameCategory: category translator: translator
 				ifNotNil: [translator localeID posixName , '.po'].
 	dirName := (safeCategory findTokens: '-')
 				inject: 'po'
-				into: [:aString :next | aString , FileDirectory slash , next].
-	pathName := dirName , FileDirectory slash , fileName.
-	(FileDirectory default directoryNamed: dirName) assureExistence.
+				into: [:aString :next | aString , FileSystem disk delimiter asString , next].
+	pathName := dirName , FileSystem disk delimiter asString , fileName.
+	(dirName asFileReference ensureDirectory).
 	^ pathName

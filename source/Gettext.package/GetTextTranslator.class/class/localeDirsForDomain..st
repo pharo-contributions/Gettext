@@ -6,5 +6,6 @@ localeDirsForDomain: aDomainName
 	dirs := OrderedCollection new.
 	dir := self localeDirForDomain: aDomainName.
 	dir ifNotNil: [dirs add: dir].
-	dirs addAll:  self defaultLocaleDirs.
+	dirs addAll:  self defaultLocaleDirs. 
+	
 	^dirs
