@@ -1,0 +1,3 @@
+creation-scripts
+validateConfiguration
+	MetacelloToolBox validateConfiguration: ConfigurationOfGettext

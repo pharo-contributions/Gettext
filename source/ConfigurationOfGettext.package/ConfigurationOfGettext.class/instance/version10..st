@@ -1,10 +1,20 @@
-as yet unclassified
+versions
 version10: spec
-	<version: '1.0'>
-	spec for: #pharo do: [
-		spec blessing: #release.
-		spec description: 'Gettext catalog for Pharo 1.1'.
-		spec timestamp:  '2010-07-29T10:04:38+02:00'.
-		spec repository: 'http://smalltalkhub.com/mc/PharoExtras/Gettext/main'.
-		spec package: 'Gettext' with: 'Gettext-HilaireFernandes.21'].
-
+	<version: '1.0' imports: #('1.0-baseline')>
+	spec
+		for: #common
+		do: [ 
+			spec blessing: #release.
+			spec description: ''.
+			spec author: 'PaulDeBruicker'.
+			spec timestamp: '12/13/2012 15:10'.
+			spec
+				project: 'RefactoringBrowser' with: #stable;
+				project: 'Seaside30' with: '3.0.7';
+				project: 'Grease' with: #stable.
+			spec
+				package: 'Gettext' with: 'Gettext-HilaireFernandes.21';
+				package: 'Seaside-Gettext-Core' with: 'Seaside-Gettext-Core-WillemVanDenEnde.11';
+				package: 'Seaside-Gettext-Examples' with: 'Seaside-Gettext-Examples-pmm.5';
+				package: 'Seaside-Gettext-Slime' with: 'Seaside-Gettext-Slime-PaulDeBruicker.9' ].
+	spec for: #pharo do: [ spec package: 'Seaside-Pharo-Gettext-Core' with: 'Seaside-Pharo-Gettext-Core-pmm.2' ]
