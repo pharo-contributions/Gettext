@@ -2,7 +2,7 @@ baselines
 baseline10: spec
 	<version: '1.0-baseline'>
 	spec
-		for: #common
+		for: #squeakCommon
 		do: [ 
 			spec blessing: #baseline.
 			spec repository: 'http://squeaksource.com/PharoNonCorePackages'.

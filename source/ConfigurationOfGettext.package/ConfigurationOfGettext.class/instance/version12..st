@@ -2,7 +2,7 @@ versions
 version12: spec
 	<version: '1.2' imports: #('1.0-baseline')>
 	spec
-		for: #common
+		for: #squeakCommon
 		do: [ 
 			spec blessing: #release.
 			spec description: ''.
