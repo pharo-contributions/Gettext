@@ -21,7 +21,7 @@ baseline11: spec
 					with: [ 
 							spec
 								className: 'ConfigurationOfGrease';
-								loads: 'Grease-Slime';
+								loads: 'Grease Slime';
 								repository: 'http://www.squeaksource.com/MetacelloRepository' ].
 			spec
 				package: 'Gettext';
