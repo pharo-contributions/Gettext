@@ -10,7 +10,7 @@ version12: spec
 			spec timestamp: '2013-06-27T13:03:24.49+02:00'.
 			spec project: 'Seaside30' with: '3.0.7'.
 			spec
-				package: 'Gettext' with: 'Gettext-usmanbhatti.29';
+				package: 'Gettext' with: 'Gettext-sebastiansastre.28';
 				package: 'Seaside-Gettext-Core' with: 'Seaside-Gettext-Core-WillemVanDenEnde.11';
 				package: 'Seaside-Gettext-Examples' with: 'Seaside-Gettext-Examples-pmm.5' ].
 	spec
