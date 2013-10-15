@@ -42,7 +42,7 @@ baseline10: spec
 					with: [ 
 							spec
 								className: 'ConfigurationOfGrease';
-								loads: #('Grease Slime');
+								loads: #('Slime');
 								repository: 'http://www.squeaksource.com/MetacelloRepository' ];
 				package: 'Seaside-Gettext-Slime'
 					with: [ 
