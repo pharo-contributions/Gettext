@@ -18,7 +18,7 @@ baseline10: spec
 					with: [ 
 							spec
 								repository: 'http://www.squeaksource.com/Seaside30Addons';
-								requires: #('Gettext' 'Seaside3') ];
+								requires: #('Gettext' 'Seaside30') ];
 				package: 'Seaside-Gettext-Examples'
 					with: [ 
 							spec
