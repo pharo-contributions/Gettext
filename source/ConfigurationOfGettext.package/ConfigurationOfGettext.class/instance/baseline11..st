@@ -7,18 +7,18 @@ baseline11: spec
 			spec blessing: #baseline.
 			spec repository: 'http://smalltalkhub.com/mc/PharoExtras/Gettext/main'.
 			spec
-				project: 'Seaside30'
+				project: 'Seaside3'
 				with: [ 
 					spec
-						className: 'ConfigurationOfSeaside30';
-						repository: 'http://www.squeaksource.com/MetacelloRepository' ].
+						className: 'ConfigurationOfSeaside3';
+						repository: 'http://www.smalltalkhub.com/mc/Seaside/MetacelloConfigurations/main' ].
 			spec
 				package: 'Gettext';
 				package: 'Seaside-Gettext-Core'
 					with: [ 
 							spec
 								repository: 'http://www.squeaksource.com/Seaside30Addons';
-								requires: #('Gettext' 'Seaside30') ];
+								requires: #('Gettext' 'Seaside3') ];
 				package: 'Seaside-Gettext-Examples'
 					with: [ 
 							spec

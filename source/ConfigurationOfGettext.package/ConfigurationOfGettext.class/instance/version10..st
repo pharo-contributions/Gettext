@@ -8,7 +8,7 @@ version10: spec
 			spec description: ''.
 			spec author: 'PaulDeBruicker'.
 			spec timestamp: '12/13/2012 15:10'.
-			spec project: 'Seaside30' with: '3.0.7'.
+			spec project: 'Seaside3' with: '3.0.7'.
 			spec
 				package: 'Gettext' with: 'Gettext-HilaireFernandes.21';
 				package: 'Seaside-Gettext-Core' with: 'Seaside-Gettext-Core-WillemVanDenEnde.11';

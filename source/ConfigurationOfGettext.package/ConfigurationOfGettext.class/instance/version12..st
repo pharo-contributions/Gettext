@@ -8,7 +8,7 @@ version12: spec
 			spec description: ''.
 			spec author: 'UsmanBhatti'.
 			spec timestamp: '2013-06-27T13:03:24.49+02:00'.
-			spec project: 'Seaside30' with: '3.0.7'.
+			spec project: 'Seaside3' with: '3.0.7'.
 			spec
 				package: 'Gettext' with: 'Gettext-sebastiansastre.28';
 				package: 'Seaside-Gettext-Core' with: 'Seaside-Gettext-Core-WillemVanDenEnde.11';
