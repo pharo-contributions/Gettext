@@ -10,6 +10,7 @@ baseline11: spec
 				project: 'Seaside3'
 				with: [ 
 					spec
+						load: #('Base');
 						className: 'ConfigurationOfSeaside3';
 						repository: 'http://www.smalltalkhub.com/mc/Seaside/MetacelloConfigurations/main' ].
 			spec
@@ -18,7 +19,7 @@ baseline11: spec
 					with: [ 
 							spec
 								repository: 'http://www.squeaksource.com/Seaside30Addons';
-								requires: #('Gettext' 'Seaside30') ];
+								requires: #('Gettext' 'Seaside3') ];
 				package: 'Seaside-Gettext-Examples'
 					with: [ 
 							spec
