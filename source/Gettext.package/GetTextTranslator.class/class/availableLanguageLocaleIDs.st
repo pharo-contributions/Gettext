@@ -8,13 +8,13 @@ availableLanguageLocaleIDs
 	dirs addAll: self defaultLocaleDirs.
 	dirs do: [:dir |
 		| localesDir |
-		localesDir := dir asFileReference ensureDirectory. 
+		localesDir := dir asFileReference ensureCreateDirectory. 
 		directoryNames := [localesDir directoryNames] on: InvalidDirectoryError do: [:e | #()].
 		directoryNames
 				do: [:langDirName | 
 					| localeID  |
 					localeID := LocaleID posixName: langDirName.
-					localeDirForLang := (localesDir fullName, '/',  (self langDirNameForLocaleID: localeID)) asFileReference ensureDirectory.
+					localeDirForLang := (localesDir fullName, '/',  (self langDirNameForLocaleID: localeID)) asFileReference ensureCreateDirectory.
 					localeDirForLang ifNotNil: [
 						(localeDirForLang filesMatching: '*.mo') ifNotEmpty: [ids add: localeID]
 					]

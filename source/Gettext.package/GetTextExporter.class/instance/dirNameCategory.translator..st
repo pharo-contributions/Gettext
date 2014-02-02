@@ -14,5 +14,5 @@ dirNameCategory: category translator: translator
 				inject: 'po'
 				into: [:aString :next | aString , FileSystem disk delimiter asString , next].
 	pathName := dirName , FileSystem disk delimiter asString , fileName.
-	(dirName asFileReference ensureDirectory).
+	(dirName asFileReference ensureCreateDirectory).
 	^ pathName

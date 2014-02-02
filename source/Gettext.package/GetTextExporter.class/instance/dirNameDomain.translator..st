@@ -12,5 +12,5 @@ dirNameDomain: domain translator: translator
 				ifNotNil: [translator localeID posixName , '.po'].
 	dirName := 'po', FileSystem disk delimiter asString , domain.
 	pathName := dirName ,  FileSystem disk delimiter asString , fileName.
-	(dirName asFileReference ensureDirectory).
+	(dirName asFileReference ensureCreateDirectory).
 	^ pathName
