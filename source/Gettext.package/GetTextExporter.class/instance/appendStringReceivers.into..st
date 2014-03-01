@@ -2,7 +2,7 @@ private
 appendStringReceivers: aSymbol into: domains
 	| literals references domainName methodReference keywords found |
 	
-	found := TranslatedReceiverFinder new stringReceiversWithContext: aSymbol.
+	found := TranslatedReceiverFinder new stringReceiversOf: aSymbol.
 	found do: [ :assoc |
 		methodReference := assoc key.
 		keywords := assoc value.

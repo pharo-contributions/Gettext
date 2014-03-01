@@ -1,8 +1,8 @@
 accessing
-stringReceiversWithContext: aSymbol
+stringReceiversOf: aSymbol
 	"Find string receivers for a symbol.
 	Answer a collection of aMethodReference -> {keyword. keyword...}"
-	"self new stringReceiversWithContext: #translated"
+	"self new stringReceiversOf: #translated"
 	| keywords methodReferences |
 	methodReferences := SystemNavigation default allCallsOn: aSymbol.
 	^ methodReferences inject: OrderedCollection new into: [:list :next |
