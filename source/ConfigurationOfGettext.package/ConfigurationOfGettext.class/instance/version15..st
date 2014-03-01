@@ -7,9 +7,9 @@ version15: spec
 			spec blessing: #development.
 			spec description: 'fixes for Pharo3.0'.
 			spec author: 'JohanBrichau'.
-			spec timestamp: '3/1/2013 10:40'.
+			spec timestamp: '3/1/2013 15:05'.
 			spec
-				package: 'Gettext' with: 'Gettext-JohanBrichau.31' ].
+				package: 'Gettext' with: 'Gettext-JohanBrichau.32' ].
 
 	spec 
 		for: #gemstone 
