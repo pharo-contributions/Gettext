@@ -59,7 +59,7 @@ baseline11: spec
 	spec
 		for: #gemstone
 		do: [ 
-			spec package: 'Gettext' with: [ spec repository: 'http://seaside.gemstone.com/ss/PharoCompat/' ].
+			spec package: 'Gettext' with: [ spec repository: 'http://seaside.gemtalksystems.com/ss/PharoCompat/' ].
 			spec
 				group: 'default' with: #('Core');
 				group: 'Core' with: #('Gettext') ]

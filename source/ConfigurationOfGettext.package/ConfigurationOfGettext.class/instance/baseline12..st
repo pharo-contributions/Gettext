@@ -15,7 +15,7 @@ baseline12: spec
 		for: #gemstone
 		do: [ 
 			spec blessing: #baseline.
-			spec repository: 'http://seaside.gemstone.com/ss/PharoCompat/'.
+			spec repository: 'http://seaside.gemtalksystems.com/ss/PharoCompat/'.
 			
 			spec 
 				package: 'Gettext-Gemstone'.
