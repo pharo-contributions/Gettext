@@ -10,7 +10,7 @@ baseline11: spec
 				project: 'Seaside3'
 				with: [ 
 					spec
-						load: #('Base');
+						loads: #('Base');
 						className: 'ConfigurationOfSeaside3';
 						repository: 'http://www.smalltalkhub.com/mc/Seaside/MetacelloConfigurations/main' ].
 			spec
