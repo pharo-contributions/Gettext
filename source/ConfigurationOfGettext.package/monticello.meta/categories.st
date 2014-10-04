@@ -1,1 +1,1 @@
-SystemOrganization addCategory: 'ConfigurationOfGettext'!
+SystemOrganization addCategory: #ConfigurationOfGettext!
