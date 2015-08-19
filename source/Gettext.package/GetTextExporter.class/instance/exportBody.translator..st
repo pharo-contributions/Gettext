@@ -14,7 +14,7 @@ exportBody: literals translator: translator
 					category := (Smalltalk at: sortedMethods first theNonMetaClassName) category asString.
 					sortKey := category , ',' , sortedMethods first printString , ',' , msgid.
 					comment := (sortedMethods
-								collect: [:each | each actualClass asString , '>>' , each methodSymbol asString])
+								collect: [:each | each actualClass asString , '>>' , each selector asString])
 								inject: category
 								into: [:result :methodName | result , ',' , methodName].
 					"Replace white spaces to := because gettext tool might
