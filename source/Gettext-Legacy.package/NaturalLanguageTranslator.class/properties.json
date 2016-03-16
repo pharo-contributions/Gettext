@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "Gettext-Legacy-Gettext-Legacy",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Translators"
+	],
+	"instvars" : [
+		"id"
+	],
+	"name" : "NaturalLanguageTranslator",
+	"type" : "normal"
+}
