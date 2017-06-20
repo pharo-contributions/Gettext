@@ -7,5 +7,5 @@ findMOForLocaleID: id domain: aDomainName
 		do: [:each |
 			path := each , sepa , langSubDir, sepa , (self moNameForDomain: aDomainName).
 			[(path asFileReference exists)
-				 ifTrue: [^path]] on: InvalidDirectoryError do: [:e | ^nil]].
+				 ifTrue: [^path]] on: DirectoryDoesNotExist do: [:e | ^nil]].
 	^nil.

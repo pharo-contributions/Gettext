@@ -1,4 +1,3 @@
 private
 privateStartUp
-
-	self createAvailableTranslators
+	self reset
