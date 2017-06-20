@@ -5,7 +5,7 @@ createAvailableTranslators
 	
 	self setupLocaleDirs.
 	self availableLanguageLocaleIDs do: [ :localeID |
-		NaturalLanguageTranslator translators 
+		self translators 
 				at: localeID 
 				put: (self newForLocaleID: localeID).
 	]

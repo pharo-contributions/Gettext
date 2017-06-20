@@ -11,7 +11,8 @@
 		"UserDefaultLocaleDirs"
 	],
 	"instvars" : [
-		"moFiles"
+		"moFiles",
+		"id"
 	],
 	"name" : "GetTextTranslator",
 	"type" : "normal"
