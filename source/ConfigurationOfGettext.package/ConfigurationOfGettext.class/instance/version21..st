@@ -1,6 +1,6 @@
 versions
 version21: spec
-	<version: '2.1' imports: #('2.0-baseline')>
+	<version: '2.1' imports: #('2.1-baseline')>
   spec
     for: #'squeakCommon'
     do: [ 
