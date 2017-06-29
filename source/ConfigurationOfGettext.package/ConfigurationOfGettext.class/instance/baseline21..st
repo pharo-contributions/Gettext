@@ -31,9 +31,8 @@ baseline21: spec
 								versionString: #stable;
 								loads: #('Core');
 								repository: 'http://www.smalltalkhub.com/mc/Seaside/MetacelloConfigurations/main' ];
-				package: 'Gettext-Legacy';
 				package: 'Gettext-Core'
-				with: [  spec includes: #('Gettext-Legacy'); requires: #('Grease Core') . ]					
+				with: [  spec requires: #('Grease Core') ]					
 		].
 
 	spec
