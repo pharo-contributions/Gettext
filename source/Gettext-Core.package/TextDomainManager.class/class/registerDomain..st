@@ -3,5 +3,5 @@ registerDomain: domainName
 	| domInfo |
 	domInfo := TextDomainInfo new.
 	DomainInfos at: domainName put: domInfo.
-	NaturalLanguageTranslator domainRegistered: domainName.
+	GetTextTranslator domainRegistered: domainName.
 	^domInfo
