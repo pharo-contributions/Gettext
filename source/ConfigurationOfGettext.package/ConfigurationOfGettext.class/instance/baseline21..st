@@ -21,7 +21,7 @@ baseline21: spec
 		].
 	
 	spec
-		for: #(#'pharo5.x' #'pharo6.x')
+		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x')
 		do: [ 		
 			spec
 				project: 'Grease Core'
