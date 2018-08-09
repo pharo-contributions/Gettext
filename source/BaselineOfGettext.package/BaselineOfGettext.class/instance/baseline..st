@@ -20,14 +20,12 @@ baseline: spec
 	spec
 		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x')
 		do: [ 		
-			spec project: 'Grease Core' with: [ 
-							spec
-								className: 'ConfigurationOfGrease';
-								versionString: #stable;
-								loads: #('Core');
-								repository: 'http://www.smalltalkhub.com/mc/Seaside/MetacelloConfigurations/main' ];
+			spec
+				baseline: 'Grease' with: [ 
+					spec 
+						repository: 'github://SeasideSt/Grease:v1.3.0/repository' ];
 				
-				package: 'Gettext-Core' with: [  spec requires: #('Grease Core') ]					
+				package: 'Gettext-Core' with: [  spec requires: #('Grease') ]					
 		].
 
 	spec
