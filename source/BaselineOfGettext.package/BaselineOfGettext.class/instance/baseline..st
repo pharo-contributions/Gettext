@@ -23,7 +23,7 @@ baseline: spec
 			spec
 				baseline: 'Grease' with: [ 
 					spec 
-						repository: 'github://SeasideSt/Grease:v1.3.0/repository' ];
+						repository: 'github://SeasideSt/Grease/repository' ];
 				
 				package: 'Gettext-Core' with: [  spec requires: #('Grease') ]					
 		].
