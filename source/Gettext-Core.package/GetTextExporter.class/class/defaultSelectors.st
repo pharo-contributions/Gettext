@@ -4,5 +4,7 @@ defaultSelectors
 	
 	^ #(
 		#translated 
+		#translatedInDomain:
+		#translatedInDomain:locale:
 		#translatedNoop
 		)
