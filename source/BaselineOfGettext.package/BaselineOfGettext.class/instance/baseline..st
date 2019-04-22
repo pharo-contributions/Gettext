@@ -18,14 +18,9 @@ baseline: spec
 		].
 	
 	spec
-		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x')
+		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x' #'pharo8.x')
 		do: [ 		
-			spec
-				baseline: 'Grease' with: [ 
-					spec 
-						repository: 'github://SeasideSt/Grease/repository' ];
-				
-				package: 'Gettext-Core' with: [  spec requires: #('Grease') ]					
+			spec package: 'Gettext-Core'.				
 		].
 
 	spec

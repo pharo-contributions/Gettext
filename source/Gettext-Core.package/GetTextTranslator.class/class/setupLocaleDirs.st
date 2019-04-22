@@ -5,6 +5,6 @@ setupLocaleDirs
 	SystemDefaultLocaleDirs := nil.
 	dirs := self systemDefaultLocaleDirs.
 	localesDirName := 'locale'.
-	dirs add:  (Smalltalk imageDirectory fullName) , sepa , localesDirName.
-	dirs add:  (Smalltalk vm path) , sepa , localesDirName.
-	^dirs
+	dirs add: Smalltalk imageDirectory fullName , sepa , localesDirName.
+	dirs add: Smalltalk vm directory , sepa , localesDirName.
+	^ dirs
