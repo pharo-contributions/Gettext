@@ -340,7 +340,9 @@ GetTextTranslator >> translate: aString [
 ]
 
 { #category : #translation }
-GetTextTranslator >> translate: aString inDomain: aDomainName [
+GetTextTranslator >> translate: aString asResultInDomain: aDomainName [
+
+	"returns a translation result instead of a simple string"
 
 	| mo result |
 
@@ -350,25 +352,37 @@ GetTextTranslator >> translate: aString inDomain: aDomainName [
 		ifFalse: [ mo translationFor: aString ].
 
 	^ (result isSuccessful not and: [ self localeID isoCountry notNil ])
-		ifTrue: [ self translateIgnoringCountry: aString inDomain: aDomainName ]
-		ifFalse: [ result translation ]
+		ifTrue: [ self translateIgnoringCountry: aString asResultInDomain: aDomainName ]
+		ifFalse: [ result ]
 
+]
+
+{ #category : #translation }
+GetTextTranslator >> translate: aString asResultInDomain: aDomainName locale: aLocale [
+
+	^ (GetTextTranslator availableForLocaleID: aLocale) translate: aString asResultInDomain: aDomainName 
+]
+
+{ #category : #translation }
+GetTextTranslator >> translate: aString inDomain: aDomainName [
+
+	^ (self translate: aString asResultInDomain: aDomainName) translation
 ]
 
 { #category : #translation }
 GetTextTranslator >> translate: aString inDomain: aDomainName locale: aLocale [
 
-	^ (GetTextTranslator availableForLocaleID: aLocale) translate: aString inDomain: aDomainName 
+	^ (self translate: aString asResultInDomain: aDomainName locale: aLocale) translation
 ]
 
 { #category : #translation }
-GetTextTranslator >> translateIgnoringCountry: aString inDomain: aDomainName [
+GetTextTranslator >> translateIgnoringCountry: aString asResultInDomain: aDomainName [
 
-	"try tranlation ignoring the country information in my locale"
+	"try translation ignoring the country information in my locale"
 
 	| languageLocale newTranslator |
 	languageLocale := LocaleID isoLanguage: self localeID isoLanguage.
 	newTranslator := GetTextTranslator availableForLocaleID: languageLocale.
-	^ newTranslator translate: aString inDomain: aDomainName
+	^ newTranslator translate: aString asResultInDomain: aDomainName
 
 ]
