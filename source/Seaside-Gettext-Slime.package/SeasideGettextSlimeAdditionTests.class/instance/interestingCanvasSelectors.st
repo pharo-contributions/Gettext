@@ -1,3 +1,0 @@
-convenience
-interestingCanvasSelectors
-	^WAAddSeasideTranslatedInMethodsWithHtmlCanvasSelectors selectorsOfInterest 
