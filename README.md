@@ -8,7 +8,7 @@ To load the project to Pharo, evaluate:
 ```smalltalk
 Metacello new
   baseline: 'Gettext';
-  repository: 'github://pharo-contributions/Gettext/src';
+  repository: 'github://pharo-contributions/Gettext/source';
   load.
 ```
 
