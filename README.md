@@ -1,6 +1,6 @@
 # Gettext
 
-Gettext is a Pharo library for locale-aware translations of strings that use standard GNU gettext (https://en.wikipedia.org/wiki/Gettext) file formats.
+Gettext is a Pharo library for locale-aware translations of strings that use standard GNU [gettext](https://en.wikipedia.org/wiki/Gettext) file formats.
 
 ## How to load
 
@@ -12,7 +12,7 @@ Metacello new
   load.
 ```
 
-Besides this, you will need the GNU gettext installed on your machine. For windows, you can find it here: (http://gnuwin32.sourceforge.net/packages/gettext.htm)[http://gnuwin32.sourceforge.net/packages/gettext.htm]. On macOS, use (Homebrew)[https://brew.sh/]
+Besides this, you will need the GNU gettext installed on your machine. For windows, you can find it here: [http://gnuwin32.sourceforge.net/packages/gettext.htm](http://gnuwin32.sourceforge.net/packages/gettext.htm). On macOS, use [Homebrew](https://brew.sh/)
 The gettext is needed to work with translation files.
 
 ## Translations
