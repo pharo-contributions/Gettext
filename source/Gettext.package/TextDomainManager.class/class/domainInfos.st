@@ -1,3 +1,0 @@
-private
-domainInfos
-	^DomainInfos

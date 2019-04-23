@@ -1,4 +1,0 @@
-private
-privateStartUp
-
-	self createAvailableTranslators
