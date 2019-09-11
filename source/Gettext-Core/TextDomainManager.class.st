@@ -124,7 +124,7 @@ TextDomainManager class >> registerDomain: domainName [
 	| domInfo |
 	domInfo := TextDomainInfo new.
 	DomainInfos at: domainName put: domInfo.
-	GetTextTranslator domainRegistered: domainName.
+	GetTextTranslator current ifNotNil:[ GetTextTranslator current domainRegistered: domainName ].
 	^domInfo
 ]
 
@@ -132,6 +132,6 @@ TextDomainManager class >> registerDomain: domainName [
 TextDomainManager class >> unregisterDomain: domainName [
 	DomainInfos removeKey: domainName.
 	self refresh.
-	GetTextTranslator domainUnregistered: domainName.
+	GetTextTranslator current ifNotNil:[ GetTextTranslator current domainUnregistered: domainName ].
 
 ]
