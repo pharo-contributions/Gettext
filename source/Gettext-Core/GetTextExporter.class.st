@@ -21,7 +21,7 @@ Class {
 	#instVars : [
 		'stream'
 	],
-	#category : 'Gettext-Core'
+	#category : #'Gettext-Core'
 }
 
 { #category : #accessing }
@@ -169,7 +169,7 @@ GetTextExporter >> createHeaders [
 	headers add: 'Last-Translator' -> ''.
 	headers add: 'Language-Team' -> ''.
 	headers add: 'MIME-Version' -> '1.0'.
-	headers add: 'Content-Type' -> ('text/plain; charset=', stream converter class encodingNames first).
+	headers add: 'Content-Type' -> ('text/plain; charset=', stream encoder charsetName).
 	headers add: 'Content-Transfer-Encoding' -> '8bit'.
 	headers add: 'X-Pharo-SystemVersion' -> (SystemVersion current asString).
 	^ headers
@@ -231,9 +231,7 @@ GetTextExporter >> export: literals translator: translator domain: domainName [
 	| fileName |
 	"Export a gettext file in a category. literals is a dictionary of keyword -> #(MethodReference...) in the textDomain."
 	fileName := self dirNameDomain: domainName translator: translator.
-	[stream := FileStream forceNewFileNamed: fileName.
-	stream lineEndConvention: #lf.
-	stream converter: UTF8TextConverter new.
+	[stream := fileName asFileReference ensureDelete; writeStream.
 	self exportHeader: domainName.
 	self exportBody: literals translator: translator]
 		ensure: [stream close]
@@ -287,7 +285,7 @@ GetTextExporter >> exportHeader: domainName [
 	headers := self createHeaders.
 	headers add: 'X-Pharo-Domain' -> domainName.
 	headers do: [:each | self exportHeaderLineKey: each key value: each value].
-	stream cr; cr
+	stream lf; lf
 ]
 
 { #category : #private }
@@ -299,7 +297,7 @@ GetTextExporter >> exportHeaderLineKey: keyString value: valueString [
 		 nextPutAll: valueString;
 		 nextPutAll: '\n';
 		 nextPut: $";
-		 cr.
+		 lf.
 ]
 
 { #category : #private }
@@ -311,12 +309,12 @@ GetTextExporter >> exportPhrase: phraseString translation: translationString [
 	translationString size = 0 ifTrue: [
 		normalizedTrans := ''
 	] ifFalse: [
-		transEndsWithCR := translationString last = (Character cr).
+		transEndsWithCR := translationString last = (Character lf).
 		phraseString last = (Character cr) ifTrue: [
 			transEndsWithCR ifTrue: [
 				normalizedTrans := translationString
 			] ifFalse: [
-				normalizedTrans :=  translationString , String cr
+				normalizedTrans :=  translationString , String lf
 			]
 		] ifFalse: [
 			transEndsWithCR ifTrue: [
@@ -325,7 +323,7 @@ GetTextExporter >> exportPhrase: phraseString translation: translationString [
 				normalizedTrans := translationString
 			]
 		].
-		transStartsWithCR := normalizedTrans first = (Character cr).
+		transStartsWithCR := normalizedTrans first = (Character lf).
 		phraseString first = (Character cr) ifTrue: [
 			transStartsWithCR ifFalse: [
 				tmp := (Character cr asString) , normalizedTrans.
@@ -346,20 +344,20 @@ GetTextExporter >> exportRecordHeader: context [
 	stream 
 		nextPutAll: '#: ';
 		nextPutAll: context;
-		cr.
+		lf.
 ]
 
 { #category : #private }
 GetTextExporter >> exportTag: tag msg: aString [ 
 	| pos end line |
-	(aString indexOf: Character cr)
+	(aString indexOf: Character lf)
 			= 0
 		ifTrue: [self exportTag: tag singleLine: aString]
 		ifFalse: [self exportTag: tag singleLine: ''.
 			pos := 1.
 			end := 0.
 			[end < aString size]
-				whileTrue: [end := aString indexOf: Character cr startingAt: pos.
+				whileTrue: [end := aString indexOf: Character lf startingAt: pos.
 					end = 0
 						ifTrue: [end := aString size].
 					line := aString copyFrom: pos to: end.
@@ -367,7 +365,7 @@ GetTextExporter >> exportTag: tag msg: aString [
 						
 						nextPutAll: (self formatString: line);
 						 nextPut: $";
-						 cr.
+						 lf.
 					pos := end + 1]]
 ]
 
@@ -379,7 +377,7 @@ GetTextExporter >> exportTag: tag singleLine: aString [
 	stream
 		nextPutAll: (self formatString: aString).
 	stream nextPut: $".
-	stream cr
+	stream lf
 ]
 
 { #category : #exporting }
@@ -418,7 +416,7 @@ GetTextExporter >> formatReplacements [
 	| replacements |
 	replacements := OrderedCollection new.
 	replacements add: '\' -> '\\'.
-	replacements add: String cr -> '\r'.
+	replacements add: String lf -> '\r'.
 	replacements add: String tab -> '\t'.
 	replacements add: '"' -> '\"'.
 	^ replacements

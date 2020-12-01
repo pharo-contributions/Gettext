@@ -35,7 +35,7 @@ Class {
 		'Cr',
 		'Lf'
 	],
-	#category : 'Gettext-Core'
+	#category : #'Gettext-Core'
 }
 
 { #category : #'instance creation' }
@@ -96,7 +96,7 @@ MOFile >> load: aFileName localeID: id [
 	translation strings are converted to internal string format on load time.
 	original-string/index pairs are registerd to Dictionary on load time."
 	localeID := id.
-	FileStream readOnlyFileNamed: aFileName do: [:strm | |originalTable translatedTable|
+	aFileName asFileReference binaryReadStreamDo: [:strm | |originalTable translatedTable|
 	fileName := aFileName.
 	self loadHeader: strm.
 	
@@ -123,7 +123,7 @@ MOFile >> load: aFileName localeID: id [
 
 { #category : #private }
 MOFile >> loadHeader: strm [
-	strm binary.
+
 	magic :=  strm uint32.
 	magic = 16rDE120495 
 		ifTrue: [isLittleEndian := true]
@@ -147,7 +147,7 @@ MOFile >> loadStringPointers: strm offset: tableOffset [
 	| offsetTable lenTable len offset tupple |
 	offsetTable := IntegerArray new: nStrings.
 	lenTable := IntegerArray new: nStrings.
-	strm binary.
+
 	strm position: tableOffset.
 	1 to: nStrings do: [:index |
 		len := self nextInt32From: strm.
@@ -172,9 +172,8 @@ MOFile >> loadStrings: strm pointers: table [
 
 { #category : #private }
 MOFile >> loadStrings: strm pointers: tupple encoding: encodingName languageEnvironment: env [
-	| offsetTable lenTable strings |
-	strm ascii; 
-		converter: (TextConverter newForEncoding: encodingName).
+	| offsetTable lenTable strings encodedStream |
+	encodedStream := ZnCharacterReadStream on: strm encoding: encodingName.
 	offsetTable :=  tupple first.
 	lenTable := tupple second.
 	strings := Array new: nStrings.
@@ -183,8 +182,8 @@ MOFile >> loadStrings: strm pointers: tupple encoding: encodingName languageEnvi
 		byteLength := lenTable at: index.
 		endPos := start + byteLength.
 		rawStr :=  (String new: byteLength) writeStream.
-		strm position:  start.
-		[strm position < endPos] whileTrue: [rawStr nextPut: strm next].
+		encodedStream position:  start.
+		[encodedStream position < endPos] whileTrue: [rawStr nextPut: encodedStream next].
 		strings at: index put: rawStr contents.
 		
 
